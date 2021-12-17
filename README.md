@@ -1,6 +1,6 @@
-# Node.js
+# Node.js GoIT course
 
-## homework №1 /ᐠﹷ ‸ ﹷ ᐟ\ﾉ
+## homework №1 /ᐠﹷ ‸ ﹷ ᐟ\ﾉ ► [TASK](https://github.com/goitacademy/nodejs-homework/tree/master/homework-01)
 
 Screenshots:
 
