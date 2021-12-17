@@ -24,6 +24,6 @@
   },
   "dependencies": {
     "uuid": "^8.3.2",
-    "yards": "^0.1.4"
+    "yargs": "^17.3.0"
   }
 }

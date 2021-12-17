@@ -11,7 +11,9 @@ async function listContacts() {
 
 async function getContactById(contactId) {
   const contactsArray = await listContacts();
-  const contact = contactsArray.find((contact) => contact.id === contactId);
+  const contact = contactsArray.find(
+    (contact) => contact.id === JSON.stringify(contactId)
+  );
   if (!contact) {
     return null;
   }
@@ -32,7 +34,9 @@ async function addContact(name, email, phone) {
 async function removeContact(contactId) {
   const contactsArray = await listContacts();
 
-  const index = contactsArray.findIndex((contact) => contact.id === contactId);
+  const index = contactsArray.findIndex(
+    (contact) => contact.id === JSON.stringify(contactId)
+  );
 
   if (index === -1) {
     return null;

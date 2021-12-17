@@ -1,4 +1,5 @@
-//const argv = require("yargs").argv;
+const argv = require("yargs").argv;
+
 const {
   listContacts,
   getContactById,
@@ -43,17 +44,4 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-// const newContact = {
-//   name: "Simon Moron",
-//   email: "moron@email.com",
-//   phone: "(233) 738-2360",
-// };
-
-// invokeAction({
-//   action: "add",
-//   ...newContact,
-// });
-
-//invokeAction({ action: "list" });
-
-invokeAction({ action: "remove", id: "9fb6921e-ece8-4aa7-abdd-2db17f1017e1" });
+invokeAction(argv);
