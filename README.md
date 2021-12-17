@@ -1,1 +1,7 @@
-# goit-node-hw-1
+# Node.js
+
+## homework №1 /ᐠﹷ ‸ ﹷ ᐟ\ﾉ
+
+---
+
+Screenshots:

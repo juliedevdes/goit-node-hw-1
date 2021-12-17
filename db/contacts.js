@@ -2,7 +2,6 @@ const fs = require("fs/promises");
 const path = require("path");
 const { v4 } = require("uuid");
 const { builtinModules } = require("module");
-const { writeFile } = require("fs");
 
 const contactsPath = path.join(__dirname, "contacts.json");
 
@@ -31,7 +30,20 @@ async function addContact(name, email, phone) {
 }
 
 async function removeContact(contactId) {
-  return contactId;
+  const contactsArray = await listContacts();
+
+  const index = contactsArray.findIndex((contact) => contact.id === contactId);
+
+  if (index === -1) {
+    return null;
+  }
+
+  const deletedContact = contactsArray.splice(index, 1)[0];
+  const clerearedContacts = contactsArray;
+
+  await fs.writeFile(contactsPath, JSON.stringify(clerearedContacts, null, 2));
+
+  return deletedContact;
 }
 
 module.exports = {

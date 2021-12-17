@@ -29,7 +29,13 @@ async function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "remove":
-      console.log(await removeContact(id));
+      await removeContact(id)
+        .then((contactToDelete) => {
+          console.log(`${contactToDelete.name} was removed from contacts.json`);
+        })
+        .catch((e) => {
+          console.log(`There is no contact with reqested id or ${e.message}`);
+        });
       break;
 
     default:
@@ -37,15 +43,17 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-const newContact = {
-  name: "Simon Moron",
-  email: "moron@email.com",
-  phone: "(233) 738-2360",
-};
+// const newContact = {
+//   name: "Simon Moron",
+//   email: "moron@email.com",
+//   phone: "(233) 738-2360",
+// };
 
-invokeAction({
-  action: "add",
-  ...newContact,
-});
+// invokeAction({
+//   action: "add",
+//   ...newContact,
+// });
 
 //invokeAction({ action: "list" });
+
+invokeAction({ action: "remove", id: "9fb6921e-ece8-4aa7-abdd-2db17f1017e1" });
